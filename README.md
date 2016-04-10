@@ -19,14 +19,10 @@ And edit `env-common.sh`.
 
 ### Scripts
 
-#### `testpullrequest.sh`
-
-Syntax: `testpullrequest.sh pr_number`
+##### `testpullrequest.sh pr_number`
 
 Downloads, apply and test the contents of a pull request against the official repo.
 
-#### `commitupdatediff.sh`
-
-Syntax: `commitupdatediff.sh "message"`
+##### `commitupdatediff.sh "message"`
 
 Commit all changes to official repository, then update both local repositories and check for differences.
