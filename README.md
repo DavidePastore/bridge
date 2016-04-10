@@ -21,9 +21,11 @@ chmod +x testpullrequest.sh
 cp env-common.sh-dist env-common.sh
 ```
 
-And edit `env-common.sh`.
+### Configuration
 
-### Scripts
+Edit `env-common.sh` and schedule `cron.sh` to run daily.
+
+### Manual scripts
 
 ##### `testpullrequest.sh pr_number`
 
