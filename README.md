@@ -15,8 +15,8 @@ svn checkout https://svn.php.net/repository/phpdoc/pt_BR/trunk      phpnet/pt_BR
 chmod +x cron.sh
 chmod +x sync.sh
 
-chmod +x afterpullaccept.sh
 chmod +x testpullrequest.sh
+chmod +x afterpullaccept.sh
 
 cp env-common.sh-dist env-common.sh
 ```
