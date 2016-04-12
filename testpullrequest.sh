@@ -1,6 +1,6 @@
 clear
 svn revert -R phpnet/pt_BR
-php utils/synctest.php https://github.com/alfsb/phpdoc-pt_BR/pull/"$1".diff phpnet/pt_BR 1
+php src/synctest.php https://github.com/phpdocbrbridge/traducao/pull/"$1".diff phpnet/pt_BR 1
 
 cd phpnet
 svn update doc-base
