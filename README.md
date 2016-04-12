@@ -15,7 +15,7 @@ svn checkout https://svn.php.net/repository/phpdoc/pt_BR/trunk      phpnet/pt_BR
 chmod +x cron.sh
 chmod +x sync.sh
 
-chmod +x commitupdatediff.sh
+chmod +x afterpullaccept.sh
 chmod +x testpullrequest.sh
 
 cp env-common.sh-dist env-common.sh
@@ -31,6 +31,6 @@ Edit `env-common.sh` and schedule `cron.sh` to run daily.
 
 Downloads, apply and test the contents of a pull request against the official repo.
 
-##### `commitupdatediff.sh "message"`
+##### `afterpullaccept.sh`
 
-Commit all changes to official repository, then update both local repositories and check for differences.
+Updates local repositories and check for differences.
