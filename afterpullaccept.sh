@@ -1,14 +1,12 @@
 clear
-echo Update on github/
-
-cd github/pt_BR
-svn update
-cd ../..
+svn update github/pt_BR
 
 echo
 echo SVN status
-
-cd phpnet/en ; echo "In en:" ; svn status ; cd .. ; cd pt_BR ; echo "In pt_BR:" ; svn status ; cd ../..
+echo "In en:"
+svn status phpnet/en
+echo "In pt_BR:"
+svn status phpnet/pt_BR
 
 echo
 echo Differences
