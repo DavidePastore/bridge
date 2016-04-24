@@ -79,6 +79,23 @@ class SvnUtil
 		return $out;
 	}
 
+	static function DiffContents( $path , $revPrev , $revNext )
+	{
+		$old = getcwd();
+		chdir( $path );
+
+		$out = $old . "/" . self::FlatFileNameOfPath( $path ) . "_{$revPrev}_{$revNext}.diff";
+
+		$cmd = "/usr/bin/svn diff --patch-compatible --revision $revPrev:$revNext > $out";
+		$ret = self::Execute( $cmd );
+		chdir( $old );
+
+		if ( $ret != 0 )
+			throw new Exception( "[$ret] $cmd\n" );
+
+		return $out;
+	}
+
 	static function DiffSummary( $path , $revPrev , $revNext )
 	{
 		$old = getcwd();
