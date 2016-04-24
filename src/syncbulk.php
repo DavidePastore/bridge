@@ -28,7 +28,9 @@ if ( $revLocal->Revision == $revRepo->Revision )
 	finalize( 0 );
 }
 
-// Generate diff and apply
+// Generate dest, diff from srce, apply on dest
+
+SvnUtil::Update( $dest );
 
 $diff = SvnUtil::Diff( $srce , $revLocal->Revision , $revRepo->Revision );
 
