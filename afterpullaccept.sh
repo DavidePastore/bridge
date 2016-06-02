@@ -13,4 +13,8 @@ echo Differences
 diff -r --exclude=".svn" --exclude="README.md" phpnet/pt_BR github/pt_BR
 
 echo
+echo Files without svn:keywords
+fgrep -lr --exclude-dir=.svn '$Revision$' phpnet/en/
+
+echo
 echo Done

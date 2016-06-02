@@ -84,4 +84,4 @@ function finalize( $returnCode )
     exit ( 0 );
 }
 
-return 0;
+exit ( -2 );
