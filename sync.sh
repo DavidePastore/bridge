@@ -7,8 +7,11 @@ cd `dirname $0`
 files=$(fgrep -lr --exclude-dir=.svn '$Revision$' phpnet/en/)
 if [ -n "$files" ]; then
     echo
-    echo "Files without svn:keywords"
+    echo "# Files without svn:keywords"
+    echo "  See 'What .subversion/config settings should I have set?' on http://doc.php.net/tutorial/faq.php"
+    echo "  and the source of this script for more info."
     echo "$files"
+    # svn propset svn:keywords 'Id Rev Revision Date LastChangedDate LastChangedRevision Author LastChangedBy HeadURL URL'
 fi
 
 /usr/bin/svn status github/pt_BR/ phpnet/pt_BR/
