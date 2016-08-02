@@ -27,7 +27,7 @@ Edit `conf.cnf` and schedule `cron.sh` to run daily.
 
 ##### `testpullrequest.sh pr_number`
 
-Downloads, apply and test the contents of a pull request against the official repo.
+Download, apply and test the contents of a pull request against the official repo.
 
 ##### `afterpullaccept.sh`
 
