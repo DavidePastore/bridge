@@ -1,6 +1,6 @@
 # Support files for SVN/Git/GitHub bridge
 
-### Instalation
+## Instalation
 
 ```
 svn export https://github.com/phpdocbrbridge/bridge/trunk phpdoc-github
@@ -19,16 +19,20 @@ chmod +x afterpullaccept.sh
 cp conf.cnf-dist conf.cnf
 ```
 
-### Configuration
+## Configuration
 
 Edit `conf.cnf` and schedule `cron.sh` to run daily.
 
-### Manual scripts
+## Manual scripts
 
-##### `testpullrequest.sh pr_number`
+#### `testpullrequest.sh [pr]`
 
-Download, apply and test the contents of a pull request against the official repo.
+Download, apply and test the contents of a pull request (pr) against the official repo.
 
-##### `afterpullaccept.sh`
+#### `afterpullaccept.sh`
 
 Updates local repositories and check for differences.
+
+## Notes
+
+* Files without **svn:keywords**: `svn propset svn:keywords 'Revision' file`
