@@ -33,6 +33,18 @@ Download, apply and test the contents of a pull request (pr) against the officia
 
 Updates local repositories and check for differences.
 
-## Notes
+---
 
-* Files without **svn:keywords**: `svn propset svn:keywords 'Revision' file`
+
+### Notes
+
+* Commit message template:
+```
+Translations by @[NAME] - https://github.com/phpdocbrbridge/traducao/pull/[NUMBER]
+```
+
+* Files without **svn:keywords**: 
+```
+svn propset svn:keywords 'Revision' file
+svn commit -m "Files without svn:keywords Revision" phpnet/en/
+```
