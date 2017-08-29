@@ -8,5 +8,7 @@ cd `dirname $0`
 
 diff -r --exclude=".svn" --exclude="README.md" phpnet/pt_BR github/pt_BR
 
-/usr/bin/php src/svnprops.php phpnet/en   
+/usr/bin/svn update phpnet/en > /dev/null
+
+/usr/bin/php src/svnprops.php phpnet/en
 /usr/bin/php src/svnprops.php phpnet/pt_BR
