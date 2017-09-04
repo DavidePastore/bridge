@@ -65,22 +65,22 @@ function ScanRecurse( $lang )
 			continue;
 		}
 		
+		# Original revision
+		
 		$nOrigLin = 0;
 		$nOrigRev = 0;
-		$nTrnsLin = 0;
-		$nTrnsRev = 0;
-		
-		# Original revision
 		
 		$lines = file( $file1 );
 		for ( $n = 0 ; $n < min( 10 , count( $lines ) ) ; $n++ )
 		{
 			$parts = explode( ' ' , normalize_space( $lines[$n] ) );
 			if ( count( $parts ) < 3 ) continue;
-			if ( $parts[1] != '$Revision:' ) continue;
-			$nOrigLin = $n;
-			$nOrigRev = (int) $parts[2];
-			break;
+			if ( $parts[1] == '$Revision:' )
+			{
+				$nOrigLin = $n;
+				$nOrigRev = (int) $parts[2];
+				break;
+			}
 		}
 		if ( $nOrigRev == 0 )
 		{
@@ -90,16 +90,26 @@ function ScanRecurse( $lang )
 		
 		# Translation revision
 		
+		$nTrnsLin = 0;
+		$nTrnsRev = 0;
+		
 		$lines = file( $file2 );
 		for ( $n = 0 ; $n < min( 10 , count( $lines ) ) ; $n++ )
 		{
 			$parts = explode( ' ' , normalize_space( $lines[$n] ) );
 			if ( count( $parts ) < 3 ) continue;
-			if ( $parts[1] != 'EN-Revision:' ) continue;
-			$nTrnsLin = $n;
-			$nTrnsRev = (int) $parts[2];
-			break;
+			if ( $parts[1] == 'EN-Revision:' )
+			{
+				$nTrnsLin = $n;
+				$nTrnsRev = $parts[2];
+				break;
+			}
 		}
+		
+		if ( $nTrnsRev == 'n/a' )
+			continue;
+		
+		$nTrnsRev = (int) $nTrnsRev;
 		if ( $nTrnsRev == 0 )
 		{
 			print "Failed to read translation revision: $file2\n";
@@ -200,7 +210,7 @@ function normalize_space( $line )
 	{
 		$before = strlen( $line );
 		
-		$line = trim( $line );
+		$line = ltrim( $line );
 		$line = str_replace( '  ' , ' ' , $line );
 		$after = strlen( $line );
 		
