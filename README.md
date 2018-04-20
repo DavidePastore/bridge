@@ -45,6 +45,6 @@ Translations by @[NAME] - https://github.com/phpdocbrbridge/traducao/pull/[NUMBE
 
 * Files without **svn:keywords**: 
 ```
-svn propset svn:keywords 'Revision' file
+svn propset svn:keywords 'Id Rev Revision Date LastChangedDate LastChangedRevision Author LastChangedBy HeadURL URL' file
 svn commit -m "Files without svn:keywords Revision" phpnet/en/
 ```
