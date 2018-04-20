@@ -18,6 +18,7 @@ fgrep -lr --exclude-dir=.svn '$Revision$' phpnet/en/
 
 # If any, then:
 # svn propset svn:keywords 'Id Rev Revision Date LastChangedDate LastChangedRevision Author LastChangedBy HeadURL URL' file
+# svn commit -m "Files without svn:keywords Revision" phpnet/en/
 
 echo
 echo Done
