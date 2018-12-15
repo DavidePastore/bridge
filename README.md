@@ -10,28 +10,27 @@ svn checkout https://github.com/phpdocbrbridge/traducao/trunk/pt_BR github/pt_BR
 
 svn co https://svn.php.net/repository/phpdoc/modules/doc-pt_BR      phpnet
 
-chmod +x cron.sh
+cp cron.cnf-dist cron.cnf
+
+chmod +x cron.sh 
+chmod +x cron-sub.sh
 chmod +x sync.sh
-
-chmod +x testpullrequest.sh
-chmod +x afterpullaccept.sh
-
-cp conf.cnf-dist conf.cnf
+chmod +x test.sh
 ```
 
 ## Configuration
 
-Edit `conf.cnf` and schedule `cron.sh` to run daily.
+Edit `cron.cnf` and schedule `cron.sh` to run daily.
 
 ## Manual scripts
 
-#### `testpullrequest.sh [pr]`
+#### `sync.sh`
 
-Download, apply and test the contents of a pull request (pr) against the official repo.
+Update and check local files.
 
-#### `afterpullaccept.sh`
+#### `test.sh [pull request #]`
 
-Updates local repositories and check for differences.
+Download, apply and test the contents of a pull request against the official repo.
 
 ---
 
@@ -43,13 +42,13 @@ Updates local repositories and check for differences.
 Translations by @[NAME] - https://github.com/phpdocbrbridge/traducao/pull/[NUMBER]
 ```
 
-* Files without **svn:keywords**: 
+* For files without `svn:keywords`:
 ```
 svn propset svn:keywords 'Id Rev Revision Date LastChangedDate LastChangedRevision Author LastChangedBy HeadURL URL' file
 svn commit -m "Files without svn:keywords Revision" phpnet/en/
 ```
 
-* Directories with `entities.*.xml`: 
+* For directories with `entities.*.xml`:
 ```
 rm entities.*.xml
 svn propset svn:ignore entities.*.xml .
