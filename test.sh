@@ -28,4 +28,6 @@ stat -c "%n %s" diff.txt
 
 echo
 echo "If ok, merge on GitHub and then:"
-echo "svn commit -m \"Translations by @NAME - https://github.com/phpdocbrbridge/traducao/pull/$1\" phpnet/pt_BR/"
+echo
+echo "    svn commit -m \"Translations by @NAME - https://github.com/phpdocbrbridge/traducao/pull/$1\" phpnet/pt_BR/"
+echo
