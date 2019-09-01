@@ -1,3 +1,5 @@
+#!/bin/bash
+
 clear
 svn update github/pt_BR
 svn update phpnet/doc-base
