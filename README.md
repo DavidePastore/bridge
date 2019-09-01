@@ -20,7 +20,7 @@ chmod +x test.sh
 
 ## Configuration
 
-Edit `cron.cnf` and schedule `cron.sh` to run daily.
+Edit `conf.cnf` and schedule `conf.sh` to run daily.
 
 ## Manual scripts
 
